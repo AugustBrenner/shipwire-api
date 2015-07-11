@@ -28,14 +28,19 @@ Resource.prototype.request = function (method, uri, path, data, cb) {
   if (typeof path === 'function') {
     cb = path;
     data = {};
-    path = null;
+    path = false;
+  }
+  if (typeof path === 'object') {
+    cb = data;
+    data = path;
+    path = false;
   }
   if (typeof data === 'function') {
     cb = data;
     data = {};
   }
   if (data.id) {
-    path += '/' + data.id;
+    uri += '/' + data.id;
     delete data.id;
   }
   if (path) {
