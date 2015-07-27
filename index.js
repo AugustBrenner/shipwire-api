@@ -87,7 +87,7 @@ util.inherits(Stock, Resource);
 
 var Rate = function (opts) {
   Resource.call(this, opts);
-  var uri = this.uri + '/api/v3/stock';
+  var uri = this.uri + '/api/v3/rate';
 
   this.get = _.partial(this.request, 'POST', uri);
 
