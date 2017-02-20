@@ -2,7 +2,6 @@ var request = require('request');
 var crypto = require('crypto');
 var util = require('util');
 var _ = require('underscore');
-_.mixin(require('underscore.string'));
 
 var Shipwire = exports.Shipwire = function (opts) {
   opts = opts || {};
