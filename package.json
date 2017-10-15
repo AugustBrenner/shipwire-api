@@ -1,11 +1,11 @@
 {
   "author": "Sander Pick (git://github.com/sanderpick)",
-  "name": "shipwire-node",
-  "description": "NodeJS client library for the Shipwire API",
-  "version": "1.0.3",
+  "name": "shipwire-node-promise",
+  "description": "Promise based NodeJS client library for the Shipwire API",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "git://github.com/sanderpick/shipwire-node.git"
+    "url": "git@github.com:AugustBrenner/shipwire-node-promise.git"
   },
   "dependencies": {
     "underscore": "^1.8.3",

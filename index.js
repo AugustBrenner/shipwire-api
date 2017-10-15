@@ -23,19 +23,16 @@ var Resource = function (opts) {
   this.uri = 'https://' + this.host;
 };
 
-Resource.prototype.request = function (method, uri, path, data, cb) {
-  if (typeof path === 'function') {
-    cb = path;
+Resource.prototype.request = (method, uri, path, data) => new Promise((resolve, reject) => {
+  if (typeof path === 'undefined') {
     data = {};
     path = false;
   }
   if (typeof path === 'object') {
-    cb = data;
     data = path;
     path = false;
   }
-  if (typeof data === 'function') {
-    cb = data;
+  if (typeof data === 'undefined') {
     data = {};
   }
   if (data.id) {
@@ -53,9 +50,10 @@ Resource.prototype.request = function (method, uri, path, data, cb) {
     headers: {'Authorization': this.auth}
   };
   request(opts, function (err, req, body) {
-    cb(err, body);
+    if(err) return reject(err)
+    resolve(body)
   });
-};
+});
 
 var Orders = function (opts) {
   Resource.call(this, opts);

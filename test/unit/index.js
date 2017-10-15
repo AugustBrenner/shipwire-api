@@ -23,9 +23,12 @@ describe('Shipwire', function () {
 
     describe('#orders#get', function () {
       it('should list orders', function (done) {
-        shipwire_.orders.get(function (err, data) {
+        shipwire_.orders.get().then(function(response){
+          assert.ok(data.status, 200);
+          done();
+        })
+        .catch(function(err){
           assert.ifError(err);
-          assert.equal(data.status, 200);
           done();
         });
       });
