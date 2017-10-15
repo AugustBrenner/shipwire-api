@@ -2,7 +2,7 @@
   "author": "August Brenner (git://github.com/augustbrenner)",
   "name": "shipwire-api",
   "description": "Promise based NodeJS client library for the Shipwire API",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
     "url": "git@github.com:AugustBrenner/shipwire-api.git"

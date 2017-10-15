@@ -53,7 +53,9 @@ Resource.prototype.request = function(method, uri, path, data){
     json: true,
     headers: {'Authorization': this.auth}
   };
-  return request(opts);
+  return request(opts).then(function(response){
+    return response.resource
+  });
 };
 
 var Orders = function (opts) {
