@@ -1,4 +1,4 @@
-var request = require('request');
+var request = require('request-promise');
 var crypto = require('crypto');
 var util = require('util');
 var _ = require('underscore');
@@ -23,7 +23,7 @@ var Resource = function (opts) {
   this.uri = 'https://' + this.host;
 };
 
-Resource.prototype.request = (method, uri, path, data) => new Promise((resolve, reject) => {
+Resource.prototype.request = function(method, uri, path, data){
   if (typeof path === 'undefined') {
     data = {};
     path = false;
@@ -49,11 +49,8 @@ Resource.prototype.request = (method, uri, path, data) => new Promise((resolve, 
     json: true,
     headers: {'Authorization': this.auth}
   };
-  request(opts, function (err, req, body) {
-    if(err) return reject(err)
-    resolve(body)
-  });
-});
+  return request(opts);
+};
 
 var Orders = function (opts) {
   Resource.call(this, opts);
