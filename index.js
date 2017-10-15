@@ -3,7 +3,8 @@ var crypto = require('crypto');
 var util = require('util');
 var _ = require('underscore');
 
-var Shipwire = exports.Shipwire = function (opts) {
+
+function Shipwire (opts) {
   opts = opts || {};
   this.orders = new Orders(opts);
   this.stock = new Stock(opts);
@@ -12,11 +13,14 @@ var Shipwire = exports.Shipwire = function (opts) {
   this.returns = new Returns(opts);
   this.products = new Products(opts);
   this.webhooks = new Webhooks(opts);
+  this.secret = new Secret(opts);
 };
 
 var Resource = function (opts) {
-  this.host = opts.host;
+  this.host = opts.host || "api.beta.shipwire.com";
+  if(!opts.username) throw "Parameter 'username' is required."
   this.username = opts.username;
+  if(!opts.password) throw "Parameter 'password' is required."
   this.password = opts.password;
   this.auth = 'Basic ' + new Buffer(this.username + ':' + this.password)
       .toString('base64');
@@ -162,3 +166,5 @@ var Secret = function (opts) {
   return this;
 };
 util.inherits(Secret, Resource);
+
+module.exports = Shipwire

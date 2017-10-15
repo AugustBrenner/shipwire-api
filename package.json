@@ -1,11 +1,11 @@
 {
-  "author": "Sander Pick (git://github.com/sanderpick)",
-  "name": "shipwire-node-promise",
+  "author": "August Brenner (git://github.com/augustbrenner)",
+  "name": "shipwire-api",
   "description": "Promise based NodeJS client library for the Shipwire API",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git@github.com:AugustBrenner/shipwire-node-promise.git"
+    "url": "git@github.com:AugustBrenner/shipwire-api.git"
   },
   "dependencies": {
     "config": "^1.21.1",
