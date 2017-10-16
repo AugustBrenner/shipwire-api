@@ -10,7 +10,7 @@ README format was adapted from MONEI/Shopify-api-node (very clean and helpful).
 ## Installation:
 
 ```shell
-$ npm install --save shipwire-node-promise
+$ npm install --save shipwire-api
 ```
 
 ## API
@@ -43,7 +43,7 @@ Throws an `Error` exception if the required options are missing.
 #### Example
 
 ```js
-const Shipwire = require('shipwire-node-promise');
+const Shipwire = require('shipwire-api');
 
 const shipwire = new Shipwire({
   host: "api.shipwire.com",
