@@ -139,7 +139,7 @@ for parameters details.
 * [Become a Partner][become-a-partner]
 
 
-[npm-shipwire-api-badge]: https://img.shields.io/badge/npm-v1.0.1-blue.svg
+[npm-shipwire-api-badge]: https://img.shields.io/badge/npm-v1.0.2-blue.svg
 [getting-started]: www.shipwire.com/w/developers/getting-started/
 [api-docs-tutorial]: https://www.shipwire.com/w/developers/tutorial/
 [webhooks-guide]: https://www.shipwire.com/w/developers/webhooks-guide/
